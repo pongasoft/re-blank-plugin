@@ -30,7 +30,7 @@ Also note that the `RE2DRender` program needs to be unzipped and is expected to 
 > 
 > ```
 > python3 configure.py -n -p /my_path/to/sdk
-> cmake "-B" "build" "-DCMAKE_BUILD_TYPE=Debug" "-G" "Unix Makefiles" "/.../re-blank-plugin"
+> cmake "-B" "build" "-DRE_SDK_ROOT:PATH=/my_path/to/sdk" "-DCMAKE_BUILD_TYPE=Debug" "-G" "Unix Makefiles" "/.../re-blank-plugin"
 > ```
 >
 > Another alternative is to simply modify the location directly in `CMakeLists.txt`
