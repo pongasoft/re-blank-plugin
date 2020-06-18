@@ -26,11 +26,11 @@ You can install the SDK wherever you want on your system and provide it as an ar
 Also note that the `RE2DRender` program needs to be unzipped and is expected to be a sibling of `SDK` (can be changed as well).
 
 > #### Note
-> If you use CLion or other IDE handling CMake natively (and thus do not use the script), if you want to provide your own paths, you need to use the Settings/Preferences of the project to provide the right location to the `cmake` command line . If you are unsure about the syntax, you can always run the `configure.py` script in dry-run mode to see it:
+> If you use CLion or other IDE handling CMake natively (and thus do not use the script), if you want to provide your own paths, you need to use the Settings/Preferences of the project to provide the right location to the `cmake` command line. If you are unsure about the syntax, you can always run the `configure.py` script in dry-run mode to see it:
 > 
 > ```
 > python3 configure.py -n -p /my_path/to/sdk
-> cmake -DRE_SDK_ROOT:PATH="/my_path/to/sdk" -G Unix Makefiles /.../re-blank-plugin
+> cmake "-B" "build" "-DCMAKE_BUILD_TYPE=Debug" "-G" "Unix Makefiles" "/.../re-blank-plugin"
 > ```
 >
 > Another alternative is to simply modify the location directly in `CMakeLists.txt`
@@ -107,7 +107,7 @@ RE_RECON_EXECUTABLE
 
 #### CLion (by Jetbrains)
 
-CLion understand CMake natively. So simply open the project in CLion. Note that CLion creates a `cmake-build-debug` folder in the source tree (also excluded in `.gitignored`) which can be changed under `Preferences / Build, Execution, Deployment / CMake / Generation Path`. Check the [notes](#note-about-the-re-sdk-location) section for how to change the paths if you don't install the SDK in its default location.  
+CLion understand CMake natively. So simply open the project in CLion. Note that CLion creates a `cmake-build-debug` folder in the source tree (also excluded in `.gitignore`) which can be changed under `Preferences / Build, Execution, Deployment / CMake / Generation Path`. Check the [notes](#note-about-the-re-sdk-location) section for how to change the paths if you don't install the SDK in its default location.  
 
 > #### Note
 > On Windows, make sure that in the `Settings / Build, Execution, Deployment / Toolchains` you have `Visual Studio` selected with an architecture `amd64`!
@@ -144,7 +144,7 @@ After running the configure script, simply go into the newly generated `build` f
 ```
 # cd build
 # ./re.sh -h
-usage: re.sh [-h] [-n] [-v] [-d] [-t] [-R] <command> [<command> ...]
+usage: re.sh [-hnvdtR] <command> [<command> ...] [-- [native-options]]
 
 positional arguments:
   command          See "Commands" section
@@ -175,6 +175,9 @@ Commands
 
   ---- CMake target ----
   <command>   : Any unknown <command> is treated as a cmake target
+
+  --- Native options ----
+  Pass remaining options to the native tool (ex: -- -j 8 for parallel build)
 ```
 
 You should be able to simply run `re.sh install` (resp. `re.bat`) to have the plugin fully built and installed in its default location. 
