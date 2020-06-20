@@ -25,8 +25,8 @@ else()
   set(FETCHCONTENT_SOURCE_DIR_RE-CMAKE "")
 endif()
 
-set(RE_CMAKE_GIT_REPO "https://github.com/pongasoft/re-cmake" CACHE STRING "re-cmake git repository url" FORCE)
-set(RE_CMAKE_GIT_TAG "v1.0.0" CACHE STRING "re-cmake git tag" FORCE)
+set(RE_CMAKE_GIT_REPO "https://github.com/pongasoft/re-cmake")
+set(RE_CMAKE_GIT_TAG "v1.0.0")
 
 FetchContent_Declare(re-cmake
       GIT_REPOSITORY    ${RE_CMAKE_GIT_REPO}
