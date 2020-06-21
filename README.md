@@ -41,6 +41,13 @@ Quick Starting guide
 
 ### Step 1 - Configure the build
 
+Below, you will find several ways to configure the build. You can pick whichever you prefer:
+
+- from the command line (using `configure.py`)
+- using a GUI interface (`cmake-gui`)
+- loading it directly in an IDE working natively with CMake (like CLion or Visual Studio Code)
+- generating a project for Xcode or Visual Studio
+
 #### Command line (`configure.py`)
 
 Invoking the `configure.py` **creates** a `build` directory in the directory where the command is run. Although it is strongly recommended to run this command outside the source tree, the `build` directory is excluded in `.gitignore` and since everything is contained within the `build` folder it is easy to clean after the fact.
@@ -192,7 +199,10 @@ Select the `native-install` target/configuration and build it (Ctrl-F9 with CLio
 
 ### Step 3 - Try the plugin
 
-You can then open Recon and load the `BlankPlugin` rack extension.
+You can then open Recon and load the `BlankPlugin` rack extension. You will find the plugin in the Effects section (the device type is set to `studio_fx` in `info.lua`) under the `pongasoft` vendor (the device manufacturer is set to `pongasoft` in `info.lua`).
+
+> #### Note
+> The plugin will **not** be accessible from Reason. You must use Recon. 
  
 ### Next Steps
 
