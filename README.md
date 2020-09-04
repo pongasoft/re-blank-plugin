@@ -152,7 +152,7 @@ After running the configure script, simply go into the newly generated `build` f
 ```
 # cd build
 # ./re.sh -h
-usage: re.sh [-hnvdtR] <command> [<command> ...] [-- [native-options]]
+usage: re.sh [-hnvbdtR] <command> [<command> ...] [-- [native-options]]
 
 positional arguments:
   command          See "Commands" section
@@ -161,6 +161,7 @@ optional arguments:
   -h, --help       show this help message and exit
   -n, --dry-run    Dry run (prints what it is going to do)
   -v, --verbose    Verbose build
+  -b, --banner     Display a banner before every command
   -d, --debugging  Use 'Debugging' for local45 command
   -t, --testing    Use 'Testing' for local45 command
   -R, --release    Invoke CMake in Release mode (for multi-config generators)
@@ -227,9 +228,13 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 Release notes
 -------------
 
+#### 1.0.1 - 2020-09-04
+
+- Use `re-cmake` 1.0.1
+
 #### 1.0.0 - 2020-06-18
 
-* First release.
+- First release.
 
 Misc
 ----
