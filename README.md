@@ -178,7 +178,8 @@ Commands
 
   ---- Common commands ----
   clean       : clean all builds
-  render      : runs RERender2D to generate the GUI (necessary for running in Recon)
+  render      : runs RE2DRender to generate the GUI (necessary for running in Recon)
+  preview     : runs RE2DPreview to generate the device preview (useful for shop images)
   uninstall   : deletes the installed RE
   validate    : runs the Recon validate process on the currently installed plugin
 
@@ -227,6 +228,10 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+
+#### 1.1.0 - 2020/09/21
+
+- Use `re-cmake` 1.1.0.
 
 #### 1.0.1 - 2020-09-04
 
