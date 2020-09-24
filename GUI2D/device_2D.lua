@@ -25,7 +25,7 @@ front = {
   },
   TapeFront = {
     offset = { 200, 50 },
-    { path = "TapeHorz" },
+    { path = "Tape_Horizontal_1frames" },
   },
 }
 
@@ -38,7 +38,7 @@ back = {
   },
   TapeBack = {
     offset = { 200, 50 },
-    { path = "TapeHorz" },
+    { path = "Tape_Horizontal_1frames" },
   },
   Placeholder = {
     offset = { 1000, 50 },
@@ -47,14 +47,14 @@ back = {
 
   -- audio out
   {
-    offset = { 2000, 50 },
+    offset = { 2200, 120 },
     audioOutputStereoPairLeft = {
       offset = { 0, 0 },
-      { path = "SharedAudioJack", frames = 3 }
+      { path = "Cable_Attachment_Audio_01_1frames" }
     },
     audioOutputStereoPairRight = {
       offset = { 150, 0 },
-      { path = "SharedAudioJack", frames = 3 }
+      { path = "Cable_Attachment_Audio_01_1frames" }
     },
   },
 
@@ -63,11 +63,11 @@ back = {
 --    offset = { 1420, 320 },
 --    audioInputStereoPairLeft = {
 --      offset = { 0, 0 },
---      { path = "SharedAudioJack", frames = 3 }
+--      { path = "Cable_Attachment_Audio_01_1frames" }
 --    },
 --    audioInputStereoPairRight = {
 --      offset = { 150, 0 },
---      { path = "SharedAudioJack", frames = 3 }
+--      { path = "Cable_Attachment_Audio_01_1frames" }
 --    },
 --  },
 }
@@ -81,7 +81,7 @@ folded_front = {
   },
   TapeFoldedFront = {
     offset = { 200, 50 },
-    { path = "TapeHorz" },
+    { path = "Tape_Horizontal_1frames" },
   },
 }
 
@@ -94,7 +94,7 @@ folded_back = {
   },
   TapeFoldedBack = {
     offset = { 200, 50 },
-    { path = "TapeHorz" },
+    { path = "Tape_Horizontal_1frames" },
   },
   CableOrigin = {
     offset = { 1000, 50 },

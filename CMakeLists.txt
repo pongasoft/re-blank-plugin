@@ -60,8 +60,6 @@ set(re_sources_cpp
 
 # Defining where the local GUI2D files live
 set(RE_2D_SRC_DIR ${CMAKE_CURRENT_LIST_DIR}/GUI2D)
-# Defining where the built-in images live (no need to duplicate them in this project)
-set(RE_SDK_BUILTIN_IMG_DIR "${RE_2D_RENDER_ROOT}/Images")
 
 # Defining all the 2D source files
 # Although you could use a file(GLOB ...) pattern, it is NOT recommended as the CMake generation would happen on
@@ -78,10 +76,10 @@ set(re_sources_2d
     ${RE_2D_SRC_DIR}/Panel_Folded_Front.png
     ${RE_2D_SRC_DIR}/Panel_Front.png
 
-    # Images provided by the SDK
-    ${RE_SDK_BUILTIN_IMG_DIR}/Placeholder.png
-    ${RE_SDK_BUILTIN_IMG_DIR}/SharedAudioJack.png
-    ${RE_SDK_BUILTIN_IMG_DIR}/TapeHorz.png
+    # Images from RE2D Stocks Graphics 1.1
+    ${RE_2D_SRC_DIR}/Placeholder.png
+    ${RE_2D_SRC_DIR}/Cable_Attachment_Audio_01_1frames.png
+    ${RE_2D_SRC_DIR}/Tape_Horizontal_1frames.png
 
     )
 
