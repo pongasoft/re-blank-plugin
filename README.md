@@ -6,7 +6,7 @@ The goal of this project is to serve as an example for how to use the [re-cmake]
 This project is a fully buildable and functional Rack Extension which does nothing (the main function `renderBatch` is empty).
 
 > #### Tip
-> Because it is so simple and essentially contains all the most basic boilerplate code to create a fully buildable and functional Rack Extension (when you start from scratch, it is a lot of things to setup), it is a great project to clone to build your own RE from it. Simply edit the `lua.info` file with your own details. The CMake based build framework will take care of the rest (like creating the right project if you want to use XCode, Visual Studio, or simply open it in CLion, Visual Studio Code, etc...).
+> If you want to easily create a blank plugin check the [Rack Extension - Quick Start](https://pongasoft.com/re-quickstart/index.html) tool.
 
 Requirements
 ------------
