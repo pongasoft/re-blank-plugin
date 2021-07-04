@@ -231,6 +231,11 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 Release notes
 -------------
 
+#### 1.3.0 - 2021/07/04
+
+- Use `re-cmake` 1.3.0.
+- Added unit test to demonstrate the feature
+
 #### 1.2.0 - 2021/01/25
 
 - Use `re-cmake` 1.2.0.

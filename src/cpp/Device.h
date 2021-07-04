@@ -19,8 +19,8 @@
 #ifndef RE_BLANK_PLUGIN_DEVICE_H
 #define RE_BLANK_PLUGIN_DEVICE_H
 
-#include "logging.h"
-#include "JukeboxTypes.h"
+#include <logging.h>
+#include <JukeboxTypes.h>
 
 class Device
 {
@@ -36,6 +36,8 @@ public:
   {
     DLOG_F(INFO, "Device(%d)", iSampleRate);
   }
+
+  inline int getSampleRate() const { return fSampleRate; }
 
   void renderBatch(const TJBox_PropertyDiff *iPropertyDiffs, TJBox_UInt32 iDiffCount);
 

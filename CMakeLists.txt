@@ -75,18 +75,28 @@ set(re_sources_2d
     ${RE_2D_SRC_DIR}/Placeholder.png
     ${RE_2D_SRC_DIR}/Cable_Attachment_Audio_01_1frames.png
     ${RE_2D_SRC_DIR}/Tape_Horizontal_1frames.png
+    )
 
+# Location of the test cases
+set(TEST_DIR "${CMAKE_CURRENT_LIST_DIR}/test/cpp")
+
+# List of test cases
+set(re_test_cpp
+    "${TEST_DIR}/test-BlankPlugin.cpp"
     )
 
 # Adding the RE plugin
 add_re_plugin(
-    RE_SDK_VERSION ${RE_SDK_VERSION}
-    RE_SDK_ROOT ${RE_SDK_ROOT}
-    RE_2D_RENDER_ROOT ${RE_2D_RENDER_ROOT}
-    BUILD_SOURCES ${re_sources_cpp} # compiled for both local and jbox builds
-    NATIVE_BUILD_SOURCES ${logging_sources} # compiled only for local builds
-    RENDER_2D_SOURCES ${re_sources_2d}
-    INCLUDE_DIRECTORIES ${LOGGING_CPP_SRC_DIR}
-    COMPILE_OPTIONS -Wall
-    ENABLE_DEBUG_LOGGING # turn on JBOX_TRACE and loguru
+    RE_SDK_VERSION       "${RE_SDK_VERSION}"
+    RE_SDK_ROOT          "${RE_SDK_ROOT}"
+    RE_2D_RENDER_ROOT    "${RE_2D_RENDER_ROOT}"
+    BUILD_SOURCES        "${re_sources_cpp}"  # compiled for both local and jbox builds
+    NATIVE_BUILD_SOURCES "${logging_sources}" # compiled only for local builds
+    RENDER_2D_SOURCES    "${re_sources_2d}"
+    INCLUDE_DIRECTORIES  "${RE_CPP_SRC_DIR}" "${LOGGING_CPP_SRC_DIR}"
+    COMPILE_OPTIONS      -Wall
+    ENABLE_DEBUG_LOGGING                      # turn on JBOX_TRACE and loguru
+    TEST_CASE_SOURCES    "${re_test_cpp}"     # the source files containing the test cases
+    TEST_LINK_LIBS       "native-build"       # plugin library (required when tests use plugin classes)
+    TEST_SOURCES         "${logging_sources}" # loguru required
 )
