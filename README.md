@@ -230,6 +230,10 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.3.1 - 2021/07/05
+
+- Use `re-cmake` 1.3.1.
+- Use static library for testing
 
 #### 1.3.0 - 2021/07/04
 
