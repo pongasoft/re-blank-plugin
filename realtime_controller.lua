@@ -1,4 +1,4 @@
--- Copyright (c) 2020 pongasoft
+-- Copyright (c) 2020-2021 pongasoft
 --
 -- Licensed under the Apache License, Version 2.0 (the "License"); you may not
 -- use this file except in compliance with the License. You may obtain a copy of
@@ -31,8 +31,8 @@ global_rtc = {
 
 rt_input_setup = {
   notify = {
-    "/audio_outputs/audioOutputLeft/connected",
-    "/audio_outputs/audioOutputRight/connected",
+    "/audio_outputs/audioOutLeft/connected",
+    "/audio_outputs/audioOutRight/connected",
   }
 }
 

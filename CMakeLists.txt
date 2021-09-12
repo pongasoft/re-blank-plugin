@@ -1,4 +1,4 @@
-# Copyright (c) 2020 pongasoft
+# Copyright (c) 2020-2021 pongasoft
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not
 # use this file except in compliance with the License. You may obtain a copy of
@@ -40,6 +40,11 @@ include("${RE_CMAKE_ROOT_DIR}/sdk.cmake")
 
 # Including logging cmake file (loguru) for Recon build
 include("cmake/logging.cmake")
+
+# Including re-mock
+set(RE_MOCK_ROOT_DIR "")
+#set(RE_MOCK_ROOT_DIR "${CMAKE_CURRENT_LIST_DIR}/../../pongasoft/re-mock")
+include(cmake/re-mock.cmake)
 
 # Defining where the sources of the plugin live
 set(RE_CPP_SRC_DIR "${CMAKE_CURRENT_LIST_DIR}/src/cpp")
@@ -99,5 +104,5 @@ add_re_plugin(
     # Testing
     TEST_CASE_SOURCES        "${re_test_cpp}"     # the source files containing the test cases
     TEST_INCLUDE_DIRECTORIES "${RE_CPP_SRC_DIR}"  # tests can include plugin classes
-    TEST_LINK_LIBS           "native-test-lib"    # tests can link plugin classes
+    TEST_LINK_LIBS           "native-test-lib" "re-mock"  # tests can link plugin classes
 )

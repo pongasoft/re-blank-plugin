@@ -230,6 +230,13 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.4.0 - 2021/09/012
+
+- Use `re-cmake` 1.3.4.
+- Use `re-mock` 0.9.0 for testing.
+- Fixed `realtime_controller.lua` after unit test uncovered wrong name!
+
+
 #### 1.3.1 - 2021/07/05
 
 - Use `re-cmake` 1.3.1.

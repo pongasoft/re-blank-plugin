@@ -1,4 +1,4 @@
-# Copyright (c) 2020 pongasoft
+# Copyright (c) 2020-2021 pongasoft
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not
 # use this file except in compliance with the License. You may obtain a copy of
@@ -26,7 +26,7 @@ else()
 endif()
 
 set(RE_CMAKE_GIT_REPO "https://github.com/pongasoft/re-cmake" CACHE STRING "re-cmake git repository url")
-set(RE_CMAKE_GIT_TAG "v1.3.1" CACHE STRING "re-cmake git tag")
+set(RE_CMAKE_GIT_TAG "v1.3.4" CACHE STRING "re-cmake git tag")
 
 FetchContent_Declare(re-cmake
       GIT_REPOSITORY    ${RE_CMAKE_GIT_REPO}

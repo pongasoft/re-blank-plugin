@@ -1,4 +1,4 @@
--- Copyright (c) 2020 pongasoft
+-- Copyright (c) 2020-2021 pongasoft
 --
 -- Licensed under the Apache License, Version 2.0 (the "License"); you may not
 -- use this file except in compliance with the License. You may obtain a copy of
@@ -29,7 +29,7 @@ short_name = "Blank"
 
 product_id = "com.pongasoft.BlankPlugin"
 manufacturer = "pongasoft"
-version_number = "1.3.1d1"
+version_number = "1.4.0d1"
 device_type = "studio_fx"
 supports_patches = false
 accepts_notes = false
