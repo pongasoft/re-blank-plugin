@@ -230,6 +230,11 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.4.1 - 2022/01/24
+
+- Use `re-cmake` 1.4.2.
+- Use `re-mock` 1.0.0 for testing.
+
 #### 1.4.0 - 2021/09/012
 
 - Use `re-cmake` 1.3.4.

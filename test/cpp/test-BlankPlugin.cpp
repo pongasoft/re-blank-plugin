@@ -28,7 +28,7 @@ using namespace re::mock;
 TEST(Device, SampleRate)
 {
   // Creates a config by reading motherboard_def.lua and realtime_controller.lua
-  auto c = DeviceConfig<Device>::fromJBoxExport(RE_CMAKE_MOTHERBOARD_DEF_LUA, RE_CMAKE_REALTIME_CONTROLLER_LUA);
+  auto c = DeviceConfig<Device>::fromJBoxExport(RE_CMAKE_PROJECT_DIR);
 
   // Creates a tester for the device
   auto tester = StudioEffectTester<Device>(c);
@@ -41,7 +41,7 @@ TEST(Device, SampleRate)
 TEST(Device, MainLogic)
 {
   // Creates a config by reading motherboard_def.lua and realtime_controller.lua
-  auto c = DeviceConfig<Device>::fromJBoxExport(RE_CMAKE_MOTHERBOARD_DEF_LUA, RE_CMAKE_REALTIME_CONTROLLER_LUA);
+  auto c = DeviceConfig<Device>::fromJBoxExport(RE_CMAKE_PROJECT_DIR);
 
   // Creates a tester for the device
   auto tester = StudioEffectTester<Device>(c);
@@ -58,5 +58,5 @@ TEST(Device, MainLogic)
   ASSERT_TRUE(tester.device().getBool("/audio_outputs/audioOutRight/connected"));
 
   // Because the blank plugin does nothing, there is no output
-  ASSERT_EQ(MockAudioDevice::StereoBuffer{}, tester.nextFrame(MockAudioDevice::buffer(0.5, 0.5)));
+  ASSERT_EQ(MockAudioDevice::StereoBuffer{}, tester.nextBatch(MockAudioDevice::buffer(0.5, 0.5)));
 }

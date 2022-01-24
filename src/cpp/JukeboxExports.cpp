@@ -26,6 +26,9 @@
  */
 void *JBox_Export_CreateNativeObject(const char iOperation[], const TJBox_Value iParams[], TJBox_UInt32 iCount)
 {
+#if LOCAL_NATIVE_BUILD
+  loguru::init_for_re("[Blank Plugin]");
+#endif
   if(std::strcmp(iOperation, "Instance") == 0)
   {
     DLOG_F(INFO, "CreateNativeObject / Instance");
