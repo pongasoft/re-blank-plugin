@@ -154,7 +154,7 @@ After running the configure script, simply go into the newly generated `build` f
 ```
 # cd build
 # ./re.sh -h
-usage: re.sh [-hnvbdtR] <command> [<command> ...] [-- [native-options]]
+usage: re.sh [-hnvlbdtRZ] <command> [<command> ...] [-- [native-options]]
 
 positional arguments:
   command          See "Commands" section
@@ -163,15 +163,18 @@ optional arguments:
   -h, --help       show this help message and exit
   -n, --dry-run    Dry run (prints what it is going to do)
   -v, --verbose    Verbose build
+  -l, --low-res    Forces low res build (4.3.0+)
   -b, --banner     Display a banner before every command
   -d, --debugging  Use 'Debugging' for local45 command
   -t, --testing    Use 'Testing' for local45 command
   -R, --release    Invoke CMake in Release mode (for multi-config generators)
+  -Z               Clears the Recon Graphics Cache (workaround)
 
 Commands
   ---- Native build commands ----
   build       : build the RE (.dylib)
   install     : build (code/gui) and install the RE for use in Recon
+  test        : run the unit tests
 
   ---- Jbox build commands (build45 / sandbox toolchain) ----
   local45     : build (code/gui) and install the RE for use in Recon ('Deployment' type or -d/-t to change)
@@ -182,6 +185,7 @@ Commands
   clean       : clean all builds
   render      : runs RE2DRender to generate the GUI (necessary for running in Recon)
   preview     : runs RE2DPreview to generate the device preview (useful for shop images)
+  edit        : runs RE Edit to edit the device (UI)
   uninstall   : deletes the installed RE
   validate    : runs the Recon validate process on the currently installed plugin
 
@@ -210,9 +214,12 @@ You can then open Recon and load the `BlankPlugin` rack extension. You will find
  
 ### Next Steps
 
-You are now ready to explore further. If you are cloning this project to create your own Rack Extension, you should start by changing `info.lua`.
+You are now ready to explore further. If you are cloning this project to create your own Rack Extension, you should start by changing `info.lua`, but check the tip section below for a better alternative.
 
 See section [Targets & Commands](https://github.com/pongasoft/re-cmake#targets--commands) for details on the various commands related to the build.
+
+> #### Tip
+> If you want to easily create a blank plugin check the [Rack Extension - Quick Start](https://pongasoft.com/re-quickstart/index.html) tool.
 
 ### A note about debug logging
 
