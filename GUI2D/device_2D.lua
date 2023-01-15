@@ -16,87 +16,55 @@
 
 format_version = "2.0"
 
---------------------------------------------------------------------------
--- Front
---------------------------------------------------------------------------
-front = {
-  Bg = {
-    { path = "Panel_Front" },
-  },
-  TapeFront = {
-    offset = { 200, 50 },
-    { path = "Tape_Horizontal_1frames" },
-  },
-}
+re_edit = { version = "1.1.0" }
 
 --------------------------------------------------------------------------
--- Back
+-- front
 --------------------------------------------------------------------------
-back = {
-  Bg = {
-    { path = "Panel_Back" },
-  },
-  TapeBack = {
-    offset = { 200, 50 },
-    { path = "Tape_Horizontal_1frames" },
-  },
-  Placeholder = {
-    offset = { 1000, 50 },
-    { path = "Placeholder" }
-  },
+front = {}
 
-  -- audio out
-  {
-    offset = { 2200, 120 },
-    audioOutputStereoPairLeft = {
-      offset = { 0, 0 },
-      { path = "Cable_Attachment_Audio_01_1frames" }
-    },
-    audioOutputStereoPairRight = {
-      offset = { 150, 0 },
-      { path = "Cable_Attachment_Audio_01_1frames" }
-    },
-  },
+-- Main panel
+front["Panel_front_bg"] = { { path = "Panel_Front" } }
 
-  -- main audio in
---  {
---    offset = { 1420, 320 },
---    audioInputStereoPairLeft = {
---      offset = { 0, 0 },
---      { path = "Cable_Attachment_Audio_01_1frames" }
---    },
---    audioInputStereoPairRight = {
---      offset = { 150, 0 },
---      { path = "Cable_Attachment_Audio_01_1frames" }
---    },
---  },
-}
+-- Widgets
+front["TapeFront"] = { offset = { 200, 50 }, { path = "Tape_Horizontal_1frames" } }
 
 --------------------------------------------------------------------------
--- Folded Front
+-- back
 --------------------------------------------------------------------------
-folded_front = {
-  Bg = {
-    { path = "Panel_Folded_Front" },
-  },
-  TapeFoldedFront = {
-    offset = { 200, 50 },
-    { path = "Tape_Horizontal_1frames" },
-  },
-}
+back = {}
+
+-- Main panel
+back["Panel_back_bg"] = { { path = "Panel_Back" } }
+
+-- Widgets
+back["TapeBack"] = { offset = { 200, 50 }, { path = "Tape_Horizontal_1frames" } }
+back["Placeholder"] = { offset = { 1000, 50 }, { path = "Placeholder" } }
+back["audioOutputStereoPairLeft"] = { offset = { 2200, 120 }, { path = "SharedAudioJack_3frames", frames = 3 } }
+back["audioOutputStereoPairRight"] = { offset = { 2350, 120 }, { path = "SharedAudioJack_3frames", frames = 3 } }
 
 --------------------------------------------------------------------------
--- Folded Back
+-- folded_front
 --------------------------------------------------------------------------
-folded_back = {
-  Bg = {
-    { path = "Panel_Folded_Back" },
-  },
-  TapeFoldedBack = {
-    offset = { 200, 50 },
-    { path = "Tape_Horizontal_1frames" },
-  },
-  CableOrigin = {
-    offset = { 1000, 50 },
-  },
-}
+folded_front = {}
+
+-- Main panel
+folded_front["Panel_folded_front_bg"] = { { path = "Panel_Folded_Front" } }
+
+-- Widgets
+folded_front["TapeFoldedFront"] = { offset = { 200, 50 }, { path = "Tape_Horizontal_1frames" } }
+
+--------------------------------------------------------------------------
+-- folded_back
+--------------------------------------------------------------------------
+folded_back = {}
+
+-- Main panel
+folded_back["Panel_folded_back_bg"] = { { path = "Panel_Folded_Back" } }
+
+-- Widgets
+folded_back["TapeFoldedBack"] = { offset = { 200, 50 }, { path = "Tape_Horizontal_1frames" } }
+
+-- Cable Origin
+folded_back["CableOrigin"] = { offset = { 1000, 50 } }
+

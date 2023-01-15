@@ -16,108 +16,59 @@
 
 format_version = "2.0"
 
+re_edit = { version = "1.1.0" }
+
 --------------------------------------------------------------------------
--- Front
+-- front
 --------------------------------------------------------------------------
-front = jbox.panel {
-  graphics = {
-    node = "Bg",
-  },
-  widgets = {
-    -- device name / tape
-    jbox.device_name {
-      graphics = {
-        node = "TapeFront",
-      },
-    },
-  }
+front_widgets = {}
+-- TapeFront
+front_widgets[#front_widgets + 1] = jbox.device_name {
+  graphics = { node = "TapeFront" }
 }
+front = jbox.panel{ graphics = { node = "Panel_front_bg" }, widgets = front_widgets }
 
 --------------------------------------------------------------------------
--- Back
+-- back
 --------------------------------------------------------------------------
-back = jbox.panel {
-  graphics = {
-    node = "Bg"
-  },
-  widgets = {
-    -- device name / tape
-    jbox.device_name {
-      graphics = {
-        node = "TapeBack",
-      },
-    },
-
-    -- placeholder
-    jbox.placeholder {
-      graphics = {
-        node = "Placeholder",
-      },
-    },
-
-    -- audio output
-    jbox.audio_output_socket {
-      graphics = {
-        node = "audioOutputStereoPairLeft",
-      },
-      socket = "/audio_outputs/audioOutLeft",
-    },
-    jbox.audio_output_socket {
-      graphics = {
-        node = "audioOutputStereoPairRight",
-      },
-      socket = "/audio_outputs/audioOutRight",
-    },
-
-    -- audio input
---    jbox.audio_input_socket {
---      graphics = {
---        node = "audioInputStereoPairLeft",
---      },
---      socket = "/audio_inputs/audioInputLeft",
---    },
---    jbox.audio_input_socket {
---      graphics = {
---        node = "audioInputStereoPairRight",
---      },
---      socket = "/audio_inputs/audioInputRight",
---    },
-  }
+back_widgets = {}
+-- TapeBack
+back_widgets[#back_widgets + 1] = jbox.device_name {
+  graphics = { node = "TapeBack" }
 }
+-- Placeholder
+back_widgets[#back_widgets + 1] = jbox.placeholder {
+  graphics = { node = "Placeholder" }
+}
+-- audioOutputStereoPairLeft
+back_widgets[#back_widgets + 1] = jbox.audio_output_socket {
+  graphics = { node = "audioOutputStereoPairLeft" },
+  socket = "/audio_outputs/audioOutLeft"
+}
+-- audioOutputStereoPairRight
+back_widgets[#back_widgets + 1] = jbox.audio_output_socket {
+  graphics = { node = "audioOutputStereoPairRight" },
+  socket = "/audio_outputs/audioOutRight"
+}
+back = jbox.panel{ graphics = { node = "Panel_back_bg" }, widgets = back_widgets }
 
 --------------------------------------------------------------------------
--- Folded Front
+-- folded_front
 --------------------------------------------------------------------------
-folded_front = jbox.panel {
-  graphics = {
-    node = "Bg",
-  },
-  widgets = {
-    -- device name / tape
-    jbox.device_name {
-      graphics = {
-        node = "TapeFoldedFront",
-      },
-    },
-  }
+folded_front_widgets = {}
+-- TapeFoldedFront
+folded_front_widgets[#folded_front_widgets + 1] = jbox.device_name {
+  graphics = { node = "TapeFoldedFront" }
 }
+folded_front = jbox.panel{ graphics = { node = "Panel_folded_front_bg" }, widgets = folded_front_widgets }
 
 --------------------------------------------------------------------------
--- Folded Back
+-- folded_back
 --------------------------------------------------------------------------
-folded_back = jbox.panel {
-  graphics = {
-    node = "Bg",
-  },
-  cable_origin = {
-    node = "CableOrigin",
-  },
-  widgets = {
-    -- device name / tape
-    jbox.device_name {
-      graphics = {
-        node = "TapeFoldedBack",
-      },
-    },
-  },
+folded_back_widgets = {}
+-- TapeFoldedBack
+folded_back_widgets[#folded_back_widgets + 1] = jbox.device_name {
+  graphics = { node = "TapeFoldedBack" }
 }
+folded_back = jbox.panel{ graphics = { node = "Panel_folded_back_bg" }, cable_origin = { node = "CableOrigin" }, widgets = folded_back_widgets }
+

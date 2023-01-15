@@ -14,7 +14,7 @@
 #
 # @author Yan Pujante
 
-cmake_minimum_required(VERSION 3.17)
+cmake_minimum_required(VERSION 3.24)
 
 # Using RE SDK version 4.3.0
 set(RE_SDK_VERSION 4.3.0)
@@ -38,34 +38,16 @@ set(RE_CPP_SRC_DIR "${CMAKE_CURRENT_LIST_DIR}/src/cpp")
 # Although you could use a file(GLOB ...) pattern, it is NOT recommended
 # as the CMake generation would happen on every single build!
 set(re_sources_cpp
-    ${RE_CPP_SRC_DIR}/Device.h
-    ${RE_CPP_SRC_DIR}/Device.cpp
-    ${RE_CPP_SRC_DIR}/JukeboxExports.cpp
+    "${RE_CPP_SRC_DIR}/Device.h"
+    "${RE_CPP_SRC_DIR}/Device.cpp"
+    "${RE_CPP_SRC_DIR}/JukeboxExports.cpp"
     )
 
 # Defining where the local GUI2D files live
 set(RE_2D_SRC_DIR "${CMAKE_CURRENT_LIST_DIR}/GUI2D")
 
-# Defining all the 2D source files
-# Although you could use a file(GLOB ...) pattern, it is NOT recommended
-# as the CMake generation would happen on every single build!
-set(re_sources_2d
-
-    # lua files describing the GUI
-    ${RE_2D_SRC_DIR}/device_2D.lua
-    ${RE_2D_SRC_DIR}/hdgui_2D.lua
-
-    # Images for the device
-    ${RE_2D_SRC_DIR}/Panel_Back.png
-    ${RE_2D_SRC_DIR}/Panel_Folded_Back.png
-    ${RE_2D_SRC_DIR}/Panel_Folded_Front.png
-    ${RE_2D_SRC_DIR}/Panel_Front.png
-
-    # Images from RE2D Stocks Graphics 1.1
-    ${RE_2D_SRC_DIR}/Placeholder.png
-    ${RE_2D_SRC_DIR}/Cable_Attachment_Audio_01_1frames.png
-    ${RE_2D_SRC_DIR}/Tape_Horizontal_1frames.png
-    )
+# Including GUI2D files
+include("${RE_2D_SRC_DIR}/gui_2D.cmake")
 
 # Location of the test cases
 set(TEST_DIR "${CMAKE_CURRENT_LIST_DIR}/test/cpp")

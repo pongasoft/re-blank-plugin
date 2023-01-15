@@ -230,6 +230,12 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.5.0 - 2023/01/15
+
+- Use `re-cmake` 1.5.0, `re-mock` 1.3.2, `re-logging` 1.0.1
+- Use [RE Edit](https://pongasoft.com/re-edit/index.html) for UI editing (introduced `GUI2D/gui_2D.cmake`)
+- Use better (= built-in) graphics for device name and sockets
+
 #### 1.4.1 - 2022/01/24
 
 - Use `re-cmake` 1.4.2.

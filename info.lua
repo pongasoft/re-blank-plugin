@@ -29,7 +29,7 @@ short_name = "Blank"
 
 product_id = "com.pongasoft.BlankPlugin"
 manufacturer = "pongasoft"
-version_number = "1.4.1d1"
+version_number = "1.5.0d1"
 device_type = "studio_fx"
 supports_patches = false
 accepts_notes = false
