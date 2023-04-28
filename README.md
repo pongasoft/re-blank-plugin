@@ -11,11 +11,23 @@ This project is a fully buildable and functional Rack Extension which does nothi
 Requirements
 ------------
 
-* This project requires CMake (minimum version 3.13) properly installed (`cmake` executable must be in your `PATH`)
-* This project currently expects RE SDK 4.2.0 or 4.1.0 to be installed on the machine (it will not download it for you)
+* This project requires CMake (minimum version 3.24) to be properly installed (`cmake` executable must be in your `PATH`)
+* This project currently expects RE SDK 4.3.0 (Hi Res support), 4.2.0 or 4.1.0 to be installed on the machine (it will not download it for you)
 * Due to the RE SDK requirements, this project also requires python 3 to be installed
-* It has been tested on macOS 10.14.6 with Xcode 9 installed
-* It has been tested on Windows 10 with Visual Studio 16 2019 build tools
+* It has been tested on macOS Big Sur (11.7) / Xcode 13.2.1 (requires macOS 15+)
+* It has been tested on macOS 12.6 / Xcode 13.3 installed and Apple Silicon (forces `x86_64` build to compile and run)
+* It has been tested on Windows 10 with Visual Studio 16 2019 build tools + Clang toolchain
+
+> #### Note
+> For Windows, since re-cmake 1.6.0, the default setup is to use the Clang toolchain, for 2 main reasons:
+>  * SIMD support out of the box (SIMD does not work without Clang)
+>  * Use a similar compiler provided with the RE SDK
+>
+> Make sure you provision the build tools properly: using the Visual Studio Installer, select the "Individual components" tab, search for "clang" and make sure that "C++ Clang..." is selected (there may be more than one entry, so select all of them).
+>
+> ![Visual Studio Installer](https://github.com/pongasoft/re-cmake/releases/download/v1.6.0/Visual_Studio_Installer.png)
+>
+> If you want to disable the use of Clang (and revert to the behavior prior to v1.6.0), you can set the (CMake) option `RE_CMAKE_ENABLE_CLANG_TOOLCHAIN` to `OFF` before including `re-cmake` (and rerun `configure.py` after deleting the `build` folder).
 
 ### Note about the RE SDK location
 
