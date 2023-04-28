@@ -237,6 +237,12 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.6.1 - 2023/04/28
+
+- Use `re-cmake` 1.6.1, `re-mock` 1.4.2, `re-logging` 1.0.1
+- Make sure that re-mock throws an exception when something is wrong
+- Uses url hashes to harden the build
+
 #### 1.5.0 - 2023/01/15
 
 - Use `re-cmake` 1.5.0, `re-mock` 1.3.2, `re-logging` 1.0.1

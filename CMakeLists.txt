@@ -1,4 +1,4 @@
-# Copyright (c) 2020-2021 pongasoft
+# Copyright (c) 2020-2023 pongasoft
 #
 # Licensed under the Apache License, Version 2.0 (the "License"); you may not
 # use this file except in compliance with the License. You may obtain a copy of
@@ -15,6 +15,9 @@
 # @author Yan Pujante
 
 cmake_minimum_required(VERSION 3.24)
+
+# Capturing root of project
+set(RE_PROJECT_ROOT_DIR "${CMAKE_CURRENT_LIST_DIR}")
 
 # Using RE SDK version 4.3.0
 set(RE_SDK_VERSION 4.3.0)
@@ -44,13 +47,13 @@ set(re_sources_cpp
     )
 
 # Defining where the local GUI2D files live
-set(RE_2D_SRC_DIR "${CMAKE_CURRENT_LIST_DIR}/GUI2D")
+set(RE_2D_SRC_DIR "${RE_PROJECT_ROOT_DIR}/GUI2D")
 
 # Including GUI2D files
 include("${RE_2D_SRC_DIR}/gui_2D.cmake")
 
 # Location of the test cases
-set(TEST_DIR "${CMAKE_CURRENT_LIST_DIR}/test/cpp")
+set(TEST_DIR "${RE_PROJECT_ROOT_DIR}/test/cpp")
 
 # List of test cases
 set(re_test_cpp
@@ -59,14 +62,16 @@ set(re_test_cpp
 
 # Adding the RE plugin
 add_re_plugin(
-    RE_SDK_VERSION       "${RE_SDK_VERSION}"
-    RE_SDK_ROOT          "${RE_SDK_ROOT}"
-    RE_2D_RENDER_ROOT    "${RE_2D_RENDER_ROOT}"
-    BUILD_SOURCES        "${re_sources_cpp}"         # compiled for both local and jbox builds
-    NATIVE_BUILD_SOURCES "${re-logging_SOURCES}"     # compiled only for local builds
-    RENDER_2D_SOURCES    "${re_sources_2d}"
-    INCLUDE_DIRECTORIES  "${re-logging_INCLUDE_DIRS}" # plugin uses loguru
-    COMPILE_OPTIONS      -Wall
+    RE_SDK_VERSION         "${RE_SDK_VERSION}"
+    RE_SDK_ROOT            "${RE_SDK_ROOT}"
+    RE_2D_RENDER_ROOT      "${RE_2D_RENDER_ROOT}"
+    BUILD_SOURCES          "${re_sources_cpp}"         # compiled for both local and jbox builds
+    NATIVE_BUILD_SOURCES   "${re-logging_SOURCES}"     # compiled only for local builds
+    RENDER_2D_SOURCES      "${re_sources_2d}"
+    INCLUDE_DIRECTORIES    "${re-logging_INCLUDE_DIRS}" # plugin uses loguru
+#   COMPILE_OPTIONS        -Wall
+#   NATIVE_COMPILE_OPTIONS -Wall                     # Ok for macOS, try -W4 instead for Windows/Clang
+    JBOX_COMPILE_OPTIONS   -Wall
     ENABLE_DEBUG_LOGGING                             # turn on JBOX_TRACE and loguru
 
     # Testing
