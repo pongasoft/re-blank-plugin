@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.24)
 #################
 # re-cmake
 #################
-set(re-cmake_GIT_TAG "v1.6.1" CACHE STRING "re-cmake git tag")
+set(re-cmake_GIT_TAG "v1.7.0" CACHE STRING "re-cmake git tag")
 set(re-cmake_GIT_REPO "https://github.com/pongasoft/re-cmake" CACHE STRING "re-cmake git repository url")
 set(re-cmake_DOWNLOAD_URL "${re-cmake_GIT_REPO}/archive/refs/tags/${re-cmake_GIT_TAG}.zip" CACHE STRING "re-cmake download url" FORCE)
-set(re-cmake_DOWNLOAD_URL_HASH "SHA256=e67703f83ec327e7086cbcf29a7d5548fc5580bc5c68f4c1ae4657671d5e5fc7" CACHE STRING "re-cmake download url hash" FORCE)
+set(re-cmake_DOWNLOAD_URL_HASH "SHA256=16b0dfc9142c95adf186e1a788d11f140f09fba4669104b82846626f1fab46a5" CACHE STRING "re-cmake download url hash" FORCE)
 
 # Uncomment/set to proper value if local instead of remote
 set(re-cmake_ROOT_DIR "") # use remote re-cmake
@@ -28,9 +28,9 @@ set(re-logging_ROOT_DIR "") # use remote re-logging
 # re-mock
 #################
 set(re-mock_GIT_REPO "https://github.com/pongasoft/re-mock" CACHE STRING "re-mock git repository url")
-set(re-mock_GIT_TAG "v1.4.2" CACHE STRING "re-mock git tag")
+set(re-mock_GIT_TAG "v1.5.0" CACHE STRING "re-mock git tag")
 set(re-mock_DOWNLOAD_URL "${re-mock_GIT_REPO}/archive/refs/tags/${re-mock_GIT_TAG}.zip" CACHE STRING "re-mock download url" FORCE)
-set(re-mock_DOWNLOAD_URL_HASH "SHA256=f19e41cde101334e5c99adebba17d23eed08aa3039120d6c0794402f3ee491b8" CACHE STRING "re-mock download url hash" FORCE)
+set(re-mock_DOWNLOAD_URL_HASH "SHA256=d0eab4271e148037fda68534a085c9ac453f30c7ceb97f7117a5b7501136bd40" CACHE STRING "re-mock download url hash" FORCE)
 
 # Uncomment/set to proper value if local instead of remote
 set(re-mock_ROOT_DIR "") # use remote re-mock
