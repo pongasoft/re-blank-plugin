@@ -31,6 +31,7 @@ product_id = "com.pongasoft.BlankPlugin"
 manufacturer = "pongasoft"
 version_number = "1.7.0d1"
 device_type = "studio_fx"
+device_categories = { "Misc" }
 supports_patches = false
 accepts_notes = false
 auto_create_track = false
