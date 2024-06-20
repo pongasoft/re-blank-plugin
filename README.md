@@ -249,6 +249,10 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.7.2 - 2024/06/20
+
+- `re-cmake` 1.7.2, `re-mock` 1.6.0
+
 #### 1.7.0 - 2023/07/03
 
 - Use SDK 4.4.0, `re-cmake` 1.7.0, `re-mock` 1.5.0
