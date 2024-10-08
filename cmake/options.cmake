@@ -3,10 +3,10 @@ cmake_minimum_required(VERSION 3.24)
 #################
 # re-cmake
 #################
-set(re-cmake_GIT_TAG "v1.7.2" CACHE STRING "re-cmake git tag")
+set(re-cmake_GIT_TAG "v1.7.3" CACHE STRING "re-cmake git tag")
 set(re-cmake_GIT_REPO "https://github.com/pongasoft/re-cmake" CACHE STRING "re-cmake git repository url")
 set(re-cmake_DOWNLOAD_URL "${re-cmake_GIT_REPO}/archive/refs/tags/${re-cmake_GIT_TAG}.zip" CACHE STRING "re-cmake download url" FORCE)
-set(re-cmake_DOWNLOAD_URL_HASH "SHA256=5859a13293ef1638879b5bfb7d25fa1c51c5a83b443ffc2736edf25e4aca49e4" CACHE STRING "re-cmake download url hash" FORCE)
+set(re-cmake_DOWNLOAD_URL_HASH "SHA256=4d77121d90130e52103358fd556b02fcbfc52730d0b4362f98cca32d849abb30" CACHE STRING "re-cmake download url hash" FORCE)
 
 # Uncomment/set to proper value if local instead of remote
 set(re-cmake_ROOT_DIR "") # use remote re-cmake
@@ -16,9 +16,9 @@ set(re-cmake_ROOT_DIR "") # use remote re-cmake
 # re-logging
 #################
 set(re-logging_GIT_REPO "https://github.com/pongasoft/re-logging" CACHE STRING "re-logging git repository url")
-set(re-logging_GIT_TAG "v1.0.1" CACHE STRING "re-logging git tag")
+set(re-logging_GIT_TAG "v1.0.2" CACHE STRING "re-logging git tag")
 set(re-logging_DOWNLOAD_URL "${re-logging_GIT_REPO}/archive/refs/tags/${re-logging_GIT_TAG}.zip" CACHE STRING "re-logging download url" FORCE)
-set(re-logging_DOWNLOAD_URL_HASH "SHA256=e71898bfb4234505e5714a726139ad21ac0bd17d63f41af80d7cc9b5760dd57f" CACHE STRING "re-logging download url hash" FORCE)
+set(re-logging_DOWNLOAD_URL_HASH "SHA256=e09c3796c06583d6d55b8c28539121f69716140f5e7f05df661c4875b807bc80" CACHE STRING "re-logging download url hash" FORCE)
 
 # Uncomment/set to proper value if local instead of remote
 set(re-logging_ROOT_DIR "") # use remote re-logging
@@ -28,9 +28,9 @@ set(re-logging_ROOT_DIR "") # use remote re-logging
 # re-mock
 #################
 set(re-mock_GIT_REPO "https://github.com/pongasoft/re-mock" CACHE STRING "re-mock git repository url")
-set(re-mock_GIT_TAG "v1.6.0" CACHE STRING "re-mock git tag")
+set(re-mock_GIT_TAG "v1.7.0" CACHE STRING "re-mock git tag")
 set(re-mock_DOWNLOAD_URL "${re-mock_GIT_REPO}/archive/refs/tags/${re-mock_GIT_TAG}.zip" CACHE STRING "re-mock download url" FORCE)
-set(re-mock_DOWNLOAD_URL_HASH "SHA256=6879590c88ae318c57ff01e57c322e85ec7f598543cfe4eca99b728600b4b89e" CACHE STRING "re-mock download url hash" FORCE)
+set(re-mock_DOWNLOAD_URL_HASH "SHA256=39a5503c07b05ce482179e63a60a5a2c32a4be9083d809090d7a7f8c6a093a02" CACHE STRING "re-mock download url hash" FORCE)
 
 # Uncomment/set to proper value if local instead of remote
 set(re-mock_ROOT_DIR "") # use remote re-mock

@@ -63,15 +63,13 @@ function(fetch_content)
 
   FetchContent_GetProperties(${ARG_NAME})
 
-  if(NOT ${ARG_NAME}_POPULATED)
-    if(FETCHCONTENT_SOURCE_DIR_${UPPERCASE_NAME})
-      message(STATUS "Using ${ARG_NAME} from local ${FETCHCONTENT_SOURCE_DIR_${UPPERCASE_NAME}}")
-    else()
-      message(STATUS "Fetching ${ARG_NAME} from ${FETCH_SOURCE}")
-    endif()
-
-    FetchContent_Populate(${ARG_NAME})
+  if(FETCHCONTENT_SOURCE_DIR_${UPPERCASE_NAME})
+    message(STATUS "Using ${ARG_NAME} from local ${FETCHCONTENT_SOURCE_DIR_${UPPERCASE_NAME}}")
+  else()
+    message(STATUS "Fetching ${ARG_NAME} from ${FETCH_SOURCE}")
   endif()
+
+  FetchContent_MakeAvailable(${ARG_NAME})
 
   set(${ARG_NAME}_ROOT_DIR "${${ARG_NAME}_SOURCE_DIR}" PARENT_SCOPE)
   set(${ARG_NAME}_SOURCE_DIR "${${ARG_NAME}_SOURCE_DIR}" PARENT_SCOPE)
