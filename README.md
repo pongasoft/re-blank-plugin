@@ -249,6 +249,10 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.8.0 - 2024/12/21
+
+- `re-cmake` 1.8.0 (patch metadata support), SDK 4.6.0
+
 #### 1.7.3 - 2024/10/08
 
 - `re-cmake` 1.7.3, `re-mock` 1.7.0, `re-logging` 1.0.2, SDK 4.5.0

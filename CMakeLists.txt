@@ -19,8 +19,8 @@ cmake_minimum_required(VERSION 3.24)
 # Capturing root of project
 set(RE_PROJECT_ROOT_DIR "${CMAKE_CURRENT_LIST_DIR}")
 
-# Using RE SDK version 4.5.0
-set(RE_SDK_VERSION 4.5.0)
+# Using RE SDK version 4.6.0
+set(RE_SDK_VERSION 4.6.0)
 
 include(cmake/options.cmake)  # (optional) override versions used
 include(cmake/re-cmake.cmake) # include re-cmake (BEFORE project() definition)
