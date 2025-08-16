@@ -31,7 +31,7 @@ project(BlankPlugin LANGUAGES CXX)
 # Using C++17
 set(CMAKE_CXX_STANDARD 17)
 
-# Initializes re-cmake (includes re-logging/loguru for logging and re-mock for unit testing)
+# Initializes re-cmake (includes re-logging for logging and re-mock for unit testing)
 re_cmake_init(INCLUDES re-logging re-mock)
 
 # Defining where the sources of the plugin live
@@ -68,11 +68,11 @@ add_re_plugin(
     BUILD_SOURCES          "${re_sources_cpp}"         # compiled for both local and jbox builds
     NATIVE_BUILD_SOURCES   "${re-logging_SOURCES}"     # compiled only for local builds
     RENDER_2D_SOURCES      "${re_sources_2d}"
-    INCLUDE_DIRECTORIES    "${re-logging_INCLUDE_DIRS}" # plugin uses loguru
+    INCLUDE_DIRECTORIES    "${re-logging_INCLUDE_DIRS}" # plugin uses re-logging
 #   COMPILE_OPTIONS        -Wall
 #   NATIVE_COMPILE_OPTIONS -Wall                     # Ok for macOS, try -W4 instead for Windows/Clang
     JBOX_COMPILE_OPTIONS   -Wall
-    ENABLE_DEBUG_LOGGING                             # turn on JBOX_TRACE and loguru
+    ENABLE_DEBUG_LOGGING                             # turn on JBOX_TRACE and re-logging
 
     # Testing
     TEST_CASE_SOURCES        "${re_test_cpp}"        # the source files containing the test cases

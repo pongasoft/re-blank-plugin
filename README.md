@@ -235,12 +235,12 @@ See section [Targets & Commands](https://github.com/pongasoft/re-cmake#targets--
 
 ### A note about debug logging
 
-This example project uses `loguru` for debug logging, to demonstrate that it is possible to use a library that does not compile when doing _jbox_ builds but compiles when doing _native_ builds. In addition, `loguru` has a lot of features, like `DCHECK_F` to do sanity checks, various levels of logging, etc...
+This example project uses `re-logging` for debug logging, to demonstrate that it is possible to use a library that does not compile when doing _jbox_ builds but compiles when doing _native_ builds. In addition, `re-logging` has a lot of features, like `DCHECK_F` to do sanity checks, various levels of logging, etc...
 
 You do not have to use it in your own project and can use `JBOX_TRACE` and other flavors provided by the SDK but note the following:
 
-- if you do a native build, `JBOX_TRACE` (and `loguru`) will be enabled only if the option `ENABLE_DEBUG_LOGGING` is provided to `add_re_plugin` as is the case in this example, so it is easy to turn off debug logging if you desire
-- `loguru` is always disabled for jbox builds (because it cannot compile with jbox builds)
+- if you do a native build, `JBOX_TRACE` (and `re-logging`) will be enabled only if the option `ENABLE_DEBUG_LOGGING` is provided to `add_re_plugin` as is the case in this example, so it is easy to turn off debug logging if you desire
+- `re-logging` is always disabled for jbox builds (because it cannot compile with jbox builds)
 - `JBOX_TRACE` is enabled or disabled in jbox builds following the rules implemented in the SDK. The rules are:
   - for 'local45 Debugging' (`./re.sh -d local45`) `JBOX_TRACE` is enabled
   - for 'local45 Testing' (`./re.sh -t local45`) `JBOX_TRACE` is enabled
@@ -249,6 +249,11 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.8.4 - 2025/08/16
+
+- `re-cmake` 1.8.4, `re-logging` 2.0.2 (the device can now be deleted/undo in Recon 
+  when the code is changed/recompiled without having to restart Recon)
+
 #### 1.8.0 - 2024/12/21
 
 - `re-cmake` 1.8.0 (patch metadata support), SDK 4.6.0
@@ -315,11 +320,6 @@ Release notes
 #### 1.0.0 - 2020-06-18
 
 - First release.
-
-Misc
-----
-
-- This project uses [loguru](https://github.com/emilk/loguru) for logging (included under `logging`)
 
 Licensing
 ---------

@@ -27,8 +27,8 @@ using namespace re::mock;
 // Device - SampleRate
 TEST(Device, SampleRate)
 {
-  // make sure that loguru/DCHECK_F calls throw an exception rather than aborting during test
-  loguru::init_for_test();
+  // make sure that logging/DCHECK_F calls throw an exception rather than aborting during test
+  RE_LOGGING_INIT_FOR_TEST("Device.SampleRate");
 
   // Creates a config by reading motherboard_def.lua and realtime_controller.lua
   auto c = DeviceConfig<Device>::fromJBoxExport(RE_CMAKE_PROJECT_DIR);
@@ -43,8 +43,8 @@ TEST(Device, SampleRate)
 // Device - MainLogic
 TEST(Device, MainLogic)
 {
-  // make sure that loguru/DCHECK_F calls throw an exception rather than aborting during test
-  loguru::init_for_test();
+  // make sure that logging/DCHECK_F calls throw an exception rather than aborting during test
+  RE_LOGGING_INIT_FOR_TEST("Device.MainLogic");
 
   // Creates a config by reading motherboard_def.lua and realtime_controller.lua
   auto c = DeviceConfig<Device>::fromJBoxExport(RE_CMAKE_PROJECT_DIR);
