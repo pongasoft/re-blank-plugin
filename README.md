@@ -249,6 +249,10 @@ You do not have to use it in your own project and can use `JBOX_TRACE` and other
 
 Release notes
 -------------
+#### 1.8.5 - 2025/08/17
+
+- `re-cmake` 1.8.5, `re-mock` 1.8.1 (Fixes issue with `JBOX_TRACE` called from destructor)
+
 #### 1.8.4 - 2025/08/16
 
 - `re-cmake` 1.8.4, `re-logging` 2.0.2 (the device can now be deleted/undo in Recon 
