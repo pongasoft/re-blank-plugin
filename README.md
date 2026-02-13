@@ -1,3 +1,6 @@
+> [!Warning]
+> This project is now hosted on [Codeberg](https://codeberg.org/pongasoft/re-blank-plugin).
+
 RE Blank Plugin
 ===============
 
